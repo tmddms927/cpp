@@ -6,23 +6,24 @@
 #    By: seung-eun <seung-eun@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 13:22:58 by seung-eun         #+#    #+#              #
-#    Updated: 2021/08/28 13:29:50 by seung-eun        ###   ########.fr        #
+#    Updated: 2021/10/09 17:10:48 by seung-eun        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 OUT		=	phonebook
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-SCRS	=	phonebook.cpp
-OBJS	=	${SRC:.c=.o}
+SRCS	=	phonebook.cpp\
+			contact.cpp
+OBJS	=	${SRCS:.cpp=.o}
 
 all		:	${OUT}
 
-.c.o	:
-	@${CC} ${CFLAGS} -c ${<} -o ${<:.c=.o} 
+.cpp.o	:
+	@${CC} ${CFLAGS} -c ${<} -o ${<:.cpp=.o} 
 
 ${OUT}	:
-		@${CC} ${CFLAGS} -o ${OUT} ${SRC}
+		@${CC} ${CFLAGS} -o ${OUT} ${SRCS}
 
 clean	:
 		@rm -rf {OBJS}

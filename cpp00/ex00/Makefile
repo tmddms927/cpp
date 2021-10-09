@@ -6,7 +6,7 @@
 #    By: seung-eun <seung-eun@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 12:29:50 by seung-eun         #+#    #+#              #
-#    Updated: 2021/08/28 13:11:39 by seung-eun        ###   ########.fr        #
+#    Updated: 2021/10/08 13:51:04 by seung-eun        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@ OUT		=	megaphone
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRC		=	megaphone.cpp
-OBJS	=	${SRC:.c=.o}
+OBJS	=	${SRC:.cpp=.o}
 
 all		:	${OUT}
 
-.c.o	:
-	@${CC} ${CFLAGS} -c ${<} -o ${<:.c=.o} 
+.cpp.o	:
+	@${CC} ${CFLAGS} -c ${<} -o ${<:.cpp=.o} 
 
 ${OUT}	:
 		@${CC} ${CFLAGS} -o ${OUT} ${SRC}
