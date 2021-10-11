@@ -6,7 +6,7 @@
 /*   By: seung-eun <seung-eun@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 14:01:02 by seung-eun         #+#    #+#             */
-/*   Updated: 2021/10/09 18:49:50 by seung-eun        ###   ########.fr       */
+/*   Updated: 2021/10/11 20:08:15 by seung-eun        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,24 @@ int		main(void)
 	{
 		std::cout << "Enter a command (ADD or SEARCH or EXIT):";
 		std::cin >> menu;
+		if (std::cin.eof())
+			break ;
+		std::cin.clear();
 		if (menu == "ADD")
 			contact[index].get_info(&index);
 		else if (menu == "SEARCH")
 		{
 			print_list(contact);
-			int num;
+			std::string num;
 			std::cout << "Enter index to get full page:";
 			std::cin >> num;
+			if (std::cin.eof())
+				break ;
 			std::cin.clear();
-			if (num < 0 || num > 7)
+			if (num.length() != 1 || num[0] < 0 || num[0] > 7)
 				std::cout << "wrong index!" << std::endl;
 			else
-				contact[num].print_contact();
+				contact[num[0] - '0'].print_contact();
 		}
 		else if (menu == "EXIT")
 		{
