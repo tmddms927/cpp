@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/29 10:12:31 by seungoh           #+#    #+#              #
-#    Updated: 2021/11/29 19:00:44 by seungoh          ###   ########.fr        #
+#    Created: 2021/11/29 18:57:23 by seungoh           #+#    #+#              #
+#    Updated: 2021/11/29 18:58:38 by seungoh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,11 @@ all		:	${OUT}
 .cpp.o	:
 	@${CC} ${CFLAGS} -c ${<} -o ${<:.cpp=.o} 
 
-${OUT}	:	${OBJS}
-		@${CC} ${CFLAGS} -o ${OUT} ${OBJS}
+${OUT}	:
+		@${CC} ${CFLAGS} -o ${OUT} ${OBJS} ${SRCS}
 
 clean	:
-		@rm -rf ${OBJS}
+		@rm -rf {OBJS}
 
 fclean	:	clean
 		@rm -rf ${OUT}

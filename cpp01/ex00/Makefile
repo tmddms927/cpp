@@ -6,7 +6,7 @@
 #    By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/29 10:12:31 by seungoh           #+#    #+#              #
-#    Updated: 2021/11/29 10:13:27 by seungoh          ###   ########.fr        #
+#    Updated: 2021/11/29 19:01:19 by seungoh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ all		:	${OUT}
 .cpp.o	:
 	@${CC} ${CFLAGS} -c ${<} -o ${<:.cpp=.o} 
 
-${OUT}	:
-		@${CC} ${CFLAGS} -o ${OUT} ${SRCS}
+${OUT}	:	${OBJS}
+		@${CC} ${CFLAGS} -o ${OUT} ${OBJS}
 
 clean	:
-		@rm -rf {OBJS}
+		@rm -rf ${OBJS}
 
 fclean	:	clean
 		@rm -rf ${OUT}
