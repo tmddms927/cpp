@@ -23,14 +23,24 @@ void Contact::get_info(int *index)
 {
 	std::cout << "first name : ";
 	std::cin >> this->first_name;
+	if (std::cin.eof())
+		return ;
 	std::cout << "last name : ";
 	std::cin >> this->last_name;
+	if (std::cin.eof())
+		return ;
 	std::cout << "nickname : ";
 	std::cin >> this->nickname;
+	if (std::cin.eof())
+		return ;
 	std::cout << "phone number : ";
 	std::cin >> this->phone_num;
+	if (std::cin.eof())
+		return ;
 	std::cout << "darkest secret : ";
 	std::cin >> this->darkest_sec;
+	if (std::cin.eof())
+		return ;
 
 	(*index)++;
 	if (*index == 8)

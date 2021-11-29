@@ -33,12 +33,7 @@ int		main(void)
 		std::cout << "Enter a command (ADD or SEARCH or EXIT):";
 		std::cin >> menu;
 		if (std::cin.eof())
-		{
-			std::cin.clear();
-			std::cin.ignore();
-			std::cout << "eof hi~" << std::endl;
-			continue ;
-		}
+			break ;
 		if (menu == "ADD")
 			contact[index].get_info(&index);
 		else if (menu == "SEARCH")
@@ -48,11 +43,9 @@ int		main(void)
 			std::cout << "Enter index to get full page:";
 			std::cin >> num;
 			if (std::cin.eof())
-			{
-				std::cin.clear();
-				std::cin.ignore();
-				continue ;
-			}
+				break ;
+				// std::cin.clear();
+				// std::cin.ignore();
 			if (num.length() != 1 || num[0] - '0' < 0 || num[0] - '0' > 7)
 				std::cout << "wrong index!" << std::endl;
 			else
