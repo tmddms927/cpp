@@ -6,7 +6,7 @@
 /*   By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 16:52:39 by seungoh           #+#    #+#             */
-/*   Updated: 2021/11/29 17:10:42 by seungoh          ###   ########.fr       */
+/*   Updated: 2021/11/29 18:23:25 by seungoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	randomChump(std::string name)
 {
+	Zombie	zombie(name);
 	
+	zombie.announce();
 }
