@@ -58,8 +58,14 @@ void Contact::print_list(int i)
 		std::cout << this->first_name.substr(0, 9) << ".|";
 	else
 		std::cout << std::setw(10) << this->first_name << "|";
-	std::cout << std::setw(10) << this->last_name << "|";
-	std::cout << std::setw(10) << this->nickname << std::endl;
+	if (this->last_name.length() > 10)
+		std::cout << this->last_name.substr(0, 9) << ".|";
+	else
+		std::cout << std::setw(10) << this->last_name << "|";
+	if (this->nickname.length() > 10)
+		std::cout << this->nickname.substr(0, 9) << "." << std::endl;
+	else
+		std::cout << std::setw(10) << this->nickname << std::endl;
 }
 
 // 연락처 출력 함수
