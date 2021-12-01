@@ -1,0 +1,23 @@
+If you're talking about copying the contents of a istream into a string,
+then one way to do it is to use an ostringstream. You can insert the
+streambuf pointer from the istream into the ostringstream and then get
+the string from that. For example:
+
+#include <fstream>
+#include <string>
+#include <sstream>
+
+int main()
+{
+std::ifstream in("textfile.txt");
+std::ostringstream out;
+
+out << in.rdbuf();
+
+std::string s = out.str();
+
+return 0;
+}
+
+Hope this helps,
+Nate

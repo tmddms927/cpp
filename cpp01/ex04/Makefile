@@ -6,7 +6,7 @@
 #    By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/29 18:57:23 by seungoh           #+#    #+#              #
-#    Updated: 2021/11/30 11:04:30 by seungoh          ###   ########.fr        #
+#    Updated: 2021/12/01 09:48:26 by seungoh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ OUT		=	replace
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRCS	=	main.cpp\
-			utils.cpp
+			Replace.cpp
 OBJS	=	${SRCS:.cpp=.o}
 
 all		:	${OUT}

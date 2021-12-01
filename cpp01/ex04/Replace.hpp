@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 10:52:11 by seungoh           #+#    #+#             */
-/*   Updated: 2021/12/01 10:18:42 by seungoh          ###   ########.fr       */
+/*   Created: 2021/12/01 09:48:07 by seungoh           #+#    #+#             */
+/*   Updated: 2021/12/01 10:34:20 by seungoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Replace.hpp"
+#ifndef REPLACE_HPP
+#define REPLACE_HPP
 
-int		main(int argc, char **argv)
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+
+class	Replace
 {
-	if (argc != 4)
-	{
-		std::cout << "error!" << std::endl;
-		return (0);
-	}
-	Replace::replace(argv[1], argv[2], argv[3]);
-	return (0);
-}
+	private:
+		
+	public:
+    	Replace();
+    	~Replace();
+		static void	replace(const std::string &file, const std::string &s1, const std::string &s2);
+};
+
+#endif
