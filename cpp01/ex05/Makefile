@@ -6,11 +6,11 @@
 #    By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/29 18:57:23 by seungoh           #+#    #+#              #
-#    Updated: 2021/12/02 09:39:20 by seungoh          ###   ########.fr        #
+#    Updated: 2021/12/03 11:18:50 by seungoh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-OUT		=	replace
+OUT		=	karen
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRCS	=	main.cpp\
