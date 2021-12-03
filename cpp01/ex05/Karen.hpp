@@ -13,7 +13,6 @@ class	Karen
 		void	error(void);
 
 	public:
-		typedef Karen*(*KarenFunc)(void);
     	Karen();
     	~Karen();
 		void	complain(std::string level);
