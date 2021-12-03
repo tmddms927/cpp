@@ -6,13 +6,18 @@
 /*   By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 09:21:20 by seungoh           #+#    #+#             */
-/*   Updated: 2021/11/30 10:39:58 by seungoh          ###   ########.fr       */
+/*   Updated: 2021/12/01 11:12:38 by seungoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
 HumanA::HumanA()
+{
+
+}
+
+HumanA::~HumanA()
 {
 
 }

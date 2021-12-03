@@ -6,7 +6,7 @@
 /*   By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 18:25:58 by seungoh           #+#    #+#             */
-/*   Updated: 2021/11/29 18:55:05 by seungoh          ###   ########.fr       */
+/*   Updated: 2021/12/03 11:23:35 by seungoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Zombie*	zombieHorde(int N, std::string name)
 		std::string new_name = name + std::to_string(i);
 		zombies[i].setName(new_name);
 	}
-	return (zombies);
+	return zombies;
 }
 
 void	removeAll(Zombie *zombies)

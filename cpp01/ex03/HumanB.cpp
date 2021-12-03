@@ -6,7 +6,7 @@
 /*   By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 09:21:26 by seungoh           #+#    #+#             */
-/*   Updated: 2021/11/30 10:54:26 by seungoh          ###   ########.fr       */
+/*   Updated: 2021/12/01 11:13:15 by seungoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 HumanB::HumanB()
 {
 	this->weapon = 0;
+}
+
+HumanB::~HumanB()
+{
+	
 }
 
 HumanB::HumanB(std::string name)

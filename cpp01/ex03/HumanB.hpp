@@ -6,7 +6,7 @@
 /*   By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 09:21:34 by seungoh           #+#    #+#             */
-/*   Updated: 2021/11/30 10:45:27 by seungoh          ###   ########.fr       */
+/*   Updated: 2021/12/01 11:12:54 by seungoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class HumanB
 
 	public:
 		HumanB();
+		~HumanB();
 		HumanB(std::string name, Weapon &weapon);
 		HumanB(std::string name);
 		void	attack(void);

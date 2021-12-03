@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seung-eun <seung-eun@student.42.fr>        +#+  +:+       +#+        */
+/*   By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:08:34 by seung-eun         #+#    #+#             */
-/*   Updated: 2021/10/09 18:47:27 by seung-eun        ###   ########.fr       */
+/*   Updated: 2021/11/29 19:23:55 by seungoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 
 //contact 생성자
-Contact::Contact (void)
+Contact::Contact(void)
 {
 	this->fill = false;
 }

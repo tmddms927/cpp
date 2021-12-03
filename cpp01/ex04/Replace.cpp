@@ -6,7 +6,7 @@
 /*   By: seungoh <seungoh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 09:48:13 by seungoh           #+#    #+#             */
-/*   Updated: 2021/12/01 11:10:48 by seungoh          ###   ########.fr       */
+/*   Updated: 2021/12/02 09:57:25 by seungoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	Replace::replace(const std::string &file, const std::string &s1, const std:
 	ss << ifs.rdbuf();
 	ifs.close();
 	str = ss.str();
+
 	//replace
 	while (1)
 	{
