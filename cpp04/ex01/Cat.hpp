@@ -13,6 +13,8 @@ public:
 	Cat(const Cat &_cat);
 	Cat& operator=(const Cat &_cat);
 	void makeSound(void) const;
+	void setBrainIdeas(std::string str);
+	void printBrainIdea();
 };
 
 #endif

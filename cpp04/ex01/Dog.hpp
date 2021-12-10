@@ -13,6 +13,8 @@ public:
 	Dog(const Dog& _dog);
 	Dog& operator=(const Dog& _dog);
 	void makeSound(void) const;
+	void setBrainIdeas(std::string str);
+	void printBrainIdea();
 };
 
 #endif

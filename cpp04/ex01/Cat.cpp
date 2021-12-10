@@ -27,3 +27,11 @@ Cat& Cat::operator=(const Cat &_cat) {
 void Cat::makeSound(void) const {
 	std::cout << "Meow Meow!" << std::endl;
 }
+
+void Cat::setBrainIdeas(std::string str) {
+	brain->setIdeas(str);
+}
+
+void Cat::printBrainIdea() {
+	brain->printIdeas();
+}
