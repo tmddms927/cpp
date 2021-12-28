@@ -22,7 +22,7 @@ Fixed::Fixed(const Fixed &_fixed) {
 }
 
 Fixed& Fixed::operator=(const Fixed &_fixed) {
-	this->setRawBits(_fixed.rawBit);
+	this->rawBit = _fixed.getRawBits();
 	std::cout << "Assignation operator called" << std::endl;
 	return *this;
 }
