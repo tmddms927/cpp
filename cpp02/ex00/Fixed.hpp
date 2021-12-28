@@ -1,20 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 14:45:58 by marvin            #+#    #+#             */
-/*   Updated: 2021/12/21 14:45:58 by marvin           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
+class Fixed {
+private:
+	//고정소수점
+	int		 			rawBit;
+	static const int	fractionalBit = 8;
 
+public:
+	Fixed();
+	~Fixed();
+	Fixed(const Fixed &fixed);
+	Fixed& operator=(const Fixed &fixed);
+	int getRawBits() const;
+	void setRawBits(int const raw);
+};
 
 #endif
