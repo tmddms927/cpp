@@ -1,4 +1,4 @@
-OUT		=	Orthodox
+OUT		=	ex00
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRCS	=	main.cpp\

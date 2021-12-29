@@ -1,4 +1,4 @@
-OUT		=	ex01
+OUT		=	ex02
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRCS	=	main.cpp\
