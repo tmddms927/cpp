@@ -26,16 +26,24 @@ public:
 	int toInt(void) const;
 
 //ex02 추가
-	Fixed& operator>(const Fixed &_fixed);
-	Fixed& operator<(const Fixed &_fixed);
-	Fixed& operator>=(const Fixed &_fixed);
-	Fixed& operator<=(const Fixed &_fixed);
-	Fixed& operator==(const Fixed &_fixed);
-	Fixed& operator!=(const Fixed &_fixed);
-	Fixed& operator+(const Fixed &_fixed);
-	Fixed& operator-(const Fixed &_fixed);
-	Fixed& operator*(const Fixed &_fixed);
-	Fixed& operator/(const Fixed &_fixed);
+	bool operator>(const Fixed &_fixed);
+	bool operator<(const Fixed &_fixed);
+	bool operator>=(const Fixed &_fixed);
+	bool operator<=(const Fixed &_fixed);
+	bool operator==(const Fixed &_fixed);
+	bool operator!=(const Fixed &_fixed);
+	Fixed operator+(const Fixed &_fixed);
+	Fixed operator-(const Fixed &_fixed);
+	Fixed operator*(const Fixed &_fixed);
+	Fixed operator/(const Fixed &_fixed);
+	Fixed& operator++(void);
+	Fixed& operator--(void);
+	Fixed operator++(int _val);
+	Fixed operator--(int _val);
+	static Fixed min(Fixed &a, Fixed &b);
+	static const Fixed min(const Fixed &a, const Fixed &b);
+	static Fixed max(Fixed &a, Fixed &b);
+	static const Fixed max(const Fixed &a, const Fixed &b);
 };
 
 //std::ostream 좌변, const Fixed obj 우변

@@ -8,22 +8,22 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed() {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 	this->rawBit = 0;
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &_fixed) {
 	*this = _fixed;
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed &_fixed) {
 	this->rawBit = _fixed.getRawBits();
-	std::cout << "Assignation operator called" << std::endl;
+	//std::cout << "Assignation operator called" << std::endl;
 	return *this;
 }
 
@@ -33,16 +33,16 @@ int Fixed::getRawBits(void) const {
 }
 
 void Fixed::setRawBits(int const raw) {
-	this->rawBit = raw * pow(2, this->fractionalBit);
+	this->rawBit = roundf(raw * pow(2, this->fractionalBit));
 }
 
 //ex01 추가
 Fixed::Fixed(const int raw) {
-	this->rawBit = raw * pow(2, this->fractionalBit);
+	this->rawBit = roundf(raw * pow(2, this->fractionalBit));
 }
 
 Fixed::Fixed(const float raw) {
-	this->rawBit = raw * pow(2, this->fractionalBit);
+	this->rawBit = roundf(raw * pow(2, this->fractionalBit));
 }
 
 float Fixed::toFloat(void) const {
@@ -61,44 +61,117 @@ std::ostream& operator<<(std::ostream &out, const Fixed &fixed) {
 	return out;
 }
 
-
 //ex02 추가
-Fixed& Fixed::operator>(const Fixed &_fixed) {
-	return 
+bool Fixed::operator>(const Fixed &_fixed) {
+	return this->getRawBits() > _fixed.getRawBits();
 }
 
-Fixed& Fixed::operator<(const Fixed &_fixed) {
-
+bool Fixed::operator<(const Fixed &_fixed) {
+	return this->getRawBits() < _fixed.getRawBits();
 }
 
-Fixed& Fixed::operator>=(const Fixed &_fixed) {
-
+bool Fixed::operator>=(const Fixed &_fixed) {
+	return this->getRawBits() >= _fixed.getRawBits();
 }
 
-Fixed& Fixed::operator<=(const Fixed &_fixed) {
-
+bool Fixed::operator<=(const Fixed &_fixed) {
+	return this->getRawBits() <= _fixed.getRawBits();
 }
 
-Fixed& Fixed::operator==(const Fixed &_fixed) {
-
+bool Fixed::operator==(const Fixed &_fixed) {
+	return this->getRawBits() == _fixed.getRawBits();
 }
 
-Fixed& Fixed::operator!=(const Fixed &_fixed) {
-
+bool Fixed::operator!=(const Fixed &_fixed) {
+	return this->getRawBits() != _fixed.getRawBits();
 }
 
-Fixed& Fixed::operator+(const Fixed &_fixed) {
+Fixed Fixed::operator+(const Fixed &_fixed) {
+	Fixed temp;
+	temp.rawBit = this->getRawBits() + _fixed.getRawBits();
 
+	return temp;
 }
 
-Fixed& Fixed::operator-(const Fixed &_fixed) {
+Fixed Fixed::operator-(const Fixed &_fixed) {
+	Fixed temp;
+	temp.rawBit = this->getRawBits() - _fixed.getRawBits();
 
+	return temp;
 }
 
-Fixed& Fixed::operator*(const Fixed &_fixed) {
+Fixed Fixed::operator*(const Fixed &_fixed) {
+	Fixed temp;
+	temp.rawBit = this->toFloat() * _fixed.toFloat() * pow(2, this->fractionalBit);
 
+	return temp;
 }
 
-Fixed& Fixed::operator/(const Fixed &_fixed) {
+Fixed Fixed::operator/(const Fixed &_fixed) {
+	Fixed temp;
+	temp.rawBit = this->toFloat() / _fixed.toFloat() * pow(2, this->fractionalBit);
 
+	return temp;
+}
+
+// void값을 받으면 전위 연산자임.
+Fixed& Fixed::operator++(void) {
+	this->rawBit++;
+
+	return *this;
+}
+
+Fixed& Fixed::operator--(void) {
+	this->rawBit--;
+
+	return *this;
+}
+
+// int값을 받으면 후위 연산자임.
+Fixed Fixed::operator++(int _val) {
+	(void)_val;
+	Fixed temp;
+
+	temp.rawBit = rawBit;
+	this->rawBit++;
+
+	return temp;
+}
+
+Fixed Fixed::operator--(int _val) {
+	(void)_val;
+	Fixed temp;
+
+	temp.rawBit = rawBit;
+	this->rawBit--;
+
+	return temp;
+}
+
+Fixed Fixed::min(Fixed &a, Fixed &b) {
+	if (a.toFloat() > b.toFloat())
+		return b;
+	else
+		return a;
+}
+
+const Fixed Fixed::min(const Fixed &a, const Fixed &b) {
+	if (a.toFloat() > b.toFloat())
+		return b;
+	else
+		return a;
+}
+
+Fixed Fixed::max(Fixed &a, Fixed &b) {
+	if (a.toFloat() > b.toFloat())
+		return a;
+	else
+		return b;
+}
+
+const Fixed Fixed::max(const Fixed &a, const Fixed &b) {
+	if (a.toFloat() > b.toFloat())
+		return a;
+	else
+		return b;
 }
