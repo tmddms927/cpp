@@ -5,14 +5,11 @@
 #include <algorithm>
 
 class ClapTrap {
-private:
+protected:
 	std::string		name;
 	unsigned int	hitPoints;
 	unsigned int	energyPoints;
 	unsigned int	attackDamage;
-	static const int _clapHp = 10;
-	static const int _clapEp = 10;
-	static const int _clapAd = 0;
 
 public:
 	ClapTrap();

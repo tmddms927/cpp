@@ -6,6 +6,7 @@ int main() {
 
 	test1.attack("hi");
 	test2.attack("hi");
+	test1.takeDamage(3);
 	test2.takeDamage(3);
 	test2.takeDamage(10);
 	test2.beRepaired(5);

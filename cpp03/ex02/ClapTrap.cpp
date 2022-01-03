@@ -1,15 +1,13 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
-: hitPoints(_clapHp), energyPoints(_clapEp), attackDamage(_clapAd) {
+ClapTrap::ClapTrap() {
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
 	std::cout << "ClapTrap Default Constructor!" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string _name)
-: hitPoints(_clapHp), energyPoints(_clapEp), attackDamage(_clapAd) {
+ClapTrap::ClapTrap(std::string _name) {
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
@@ -21,8 +19,7 @@ ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap Destructor!" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &_clapTrap)
-: hitPoints(_clapHp), energyPoints(_clapEp), attackDamage(_clapAd) {
+ClapTrap::ClapTrap(const ClapTrap &_clapTrap) {
 	*this = _clapTrap;
 }
 
