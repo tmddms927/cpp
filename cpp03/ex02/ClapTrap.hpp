@@ -10,6 +10,9 @@ protected:
 	unsigned int	hitPoints;
 	unsigned int	energyPoints;
 	unsigned int	attackDamage;
+	static const int _clapHp = 100;
+	static const int _clapEp = 100;
+	static const int _clapAd = 30;
 
 public:
 	ClapTrap();
