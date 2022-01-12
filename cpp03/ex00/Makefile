@@ -1,6 +1,6 @@
 OUT		=	ex00
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRCS	=	main.cpp\
 			ClapTrap.cpp
 OBJS	=	${SRCS:.cpp=.o}
