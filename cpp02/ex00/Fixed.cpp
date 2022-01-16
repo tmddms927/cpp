@@ -17,18 +17,19 @@ Fixed::~Fixed() {
 }
 
 Fixed::Fixed(const Fixed &_fixed) {
-	*this = _fixed;
 	std::cout << "Copy constructor called" << std::endl;
+	*this = _fixed;
 }
 
 Fixed& Fixed::operator=(const Fixed &_fixed) {
-	this->rawBit = _fixed.getRawBits();
+	this->rawBit = _fixed.rawBit;
 	std::cout << "Assignation operator called" << std::endl;
 	return *this;
 }
 
 //뒤에 const를 붙이면 객체의 변수 값을 바꾸지않겠다고 명시
 int Fixed::getRawBits(void) const {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->rawBit);
 }
 
