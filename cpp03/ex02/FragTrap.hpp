@@ -3,18 +3,14 @@
 
 #include "ScavTrap.hpp"
 
-class FragTrap : public ScavTrap {
-private:
-	const int scav_hp = 100;
-	const int scav_ep = 100;
-	const int scav_ad = 30;
-
+class FragTrap:public ScavTrap {
 public:
 	FragTrap();
 	FragTrap(std::string _name);
 	~FragTrap();
 	FragTrap(const FragTrap &_fragTrap);
 	FragTrap& operator=(const FragTrap &_fragTrap);
+	void highFivesGuys(void);
 };
 
 #endif

@@ -1,7 +1,7 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-	ScavTrap test1;
+	FragTrap test1;
 
 	test1.attack("hihi");
 	test1.takeDamage(20);
@@ -10,7 +10,7 @@ int main() {
 
 	std::cout << "==========================" << std::endl;
 
-	ScavTrap test2(test1);
+	FragTrap test2(test1);
 
 	test1.attack("hihi");
 	test1.beRepaired(10);

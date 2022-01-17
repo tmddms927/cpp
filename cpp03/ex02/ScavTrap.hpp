@@ -3,9 +3,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap:public ClapTrap {
-private:
-
+class ScavTrap : public ClapTrap {
 public:
 	ScavTrap();
 	ScavTrap(std::string _name);

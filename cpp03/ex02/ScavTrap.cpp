@@ -2,17 +2,11 @@
 
 ScavTrap::ScavTrap() {
 	std::cout << "ScavTrap Default Constructor!" << std::endl;
-	hitPoints = 100;
-	attackDamage = 50;
-	energyPoints = 20;
 }
 
 ScavTrap::ScavTrap(std::string _name) {
 	std::cout << "ScavTrap Constructor!" << std::endl;
 	name = _name;
-	hitPoints = 100;
-	attackDamage = 50;
-	energyPoints = 20;
 }
 
 ScavTrap::~ScavTrap() {
