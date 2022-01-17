@@ -13,7 +13,6 @@ protected:
 	static const int _clapHp = 100;
 	static const int _clapEp = 100;
 	static const int _clapAd = 30;
-
 public:
 	ClapTrap();
 	ClapTrap(std::string _name);

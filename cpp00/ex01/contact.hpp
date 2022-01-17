@@ -8,7 +8,7 @@
 
 class				Contact
 {
-	private	:
+	private:
 		bool		fill;
 		std::string	first_name;
 		std::string	last_name;
@@ -16,7 +16,7 @@ class				Contact
 		std::string	phone_num;
 		std::string	darkest_sec;
 
-	public	:
+	public:
 		Contact(void);
 		void		get_info(int *index);
 		void		print_list(int i);

@@ -44,8 +44,6 @@ int		main(void)
 			std::cin >> num;
 			if (std::cin.eof())
 				break ;
-				// std::cin.clear();
-				// std::cin.ignore();
 			if (num.length() != 1 || num[0] - '0' < 0 || num[0] - '0' > 7)
 				std::cout << "wrong index!" << std::endl;
 			else
