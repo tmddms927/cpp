@@ -1,13 +1,15 @@
 #include "Animal.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
+#define DOG "Dog"
 
-class Dog:Animal {
-
-}
-
-struct Base {
-	int i;
+class Dog:public Animal {
+public:
+	Dog();
+	~Dog();
+	Dog(const Dog& _dog);
+	Dog& operator=(const Dog& _dog);
+	void makeSound(void) const;
 };
- 
-struct Derived:Base {
-	
-};
+
+#endif

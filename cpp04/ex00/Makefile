@@ -2,8 +2,11 @@ OUT		=	ex00
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
 SRCS	=	main.cpp\
+			Animal.cpp\
 			Cat.cpp\
-			Dog.cpp
+			Dog.cpp\
+			WrongAnimal.cpp\
+			WrongCat.cpp
 OBJS	=	${SRCS:.cpp=.o}
 
 all		:	${OUT}
