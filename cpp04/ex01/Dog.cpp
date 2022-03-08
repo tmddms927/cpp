@@ -17,8 +17,9 @@ Dog::Dog(const Dog& _dog) {
 
 Dog& Dog::operator=(const Dog& _dog) {
 	if (this != &_dog) {
+		delete brain;
 		brain = new Brain();
-		brain = _dog.brain;
+		*brain = *_dog.brain;
 		type = _dog.type;
 	}
 	return *this;
