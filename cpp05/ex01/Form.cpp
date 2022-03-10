@@ -1,5 +1,25 @@
 #include "Form.hpp"
 
+Form::Form() : signed_grade(0), execute_grade(0) {
+}
+
+Form::~Form() {
+}
+
+Form::Form(const Form& form) : name(form.name), sign(false),
+	signed_grade(form.signed_grade), execute_grade(form.execute_grade) {
+}
+
+Form& Form::operator=(const Form& form) {
+	if (this != &form) {
+		*const_cast<std::string *>(&name) = form.name;
+		sign = form.sign;
+		*const_cast<int *>(&signed_grade) = form.signed_grade;
+		*const_cast<int *>(&execute_grade) = form.execute_grade;
+	}
+	return *this;
+}
+
 Form::Form(std::string _name, int _signed_grade, int _excute_grade)
 : name(_name), signed_grade(_signed_grade), execute_grade(_excute_grade) {
 	sign = false;

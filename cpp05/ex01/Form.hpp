@@ -14,8 +14,12 @@ private:
 	bool sign;
 	const int signed_grade;
 	const int execute_grade;
+	Form();
 
 public:
+	~Form();
+	Form(const Form& form);
+	Form& operator=(const Form& form);
 	Form(std::string _name, int _signed_grade, int _excute_grade);
 	class GradeTooHighException : public std::exception {
 		const char* what() const throw();

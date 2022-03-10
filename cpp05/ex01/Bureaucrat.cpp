@@ -1,5 +1,22 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() {
+}
+
+Bureaucrat::~Bureaucrat() {
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) : name(bureaucrat.name), grade(bureaucrat.grade){
+}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bureaucrat) {
+	if (&bureaucrat != this) {
+		*(const_cast<std::string *>(&name)) = bureaucrat.name;
+		grade = bureaucrat.grade;
+	}
+	return *this;
+}
+
 Bureaucrat::Bureaucrat(std::string _name, int _grade):name(_name), grade(_grade) {
 }
 
