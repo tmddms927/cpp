@@ -6,10 +6,10 @@ Cat::Cat() {
 	type = CAT;
 }
 
-Cat::~Cat() {
-	std::cout << "Cat Default Destructor!" << std::endl;
-	delete brain;
-}
+// Cat::~Cat() {
+// 	std::cout << "Cat Default Destructor!" << std::endl;
+// 	delete brain;
+// }
 
 Cat::Cat(const Cat &_cat) {
 	*this = _cat;

@@ -12,6 +12,9 @@
 
 #include <iostream>
 
+int g_num;
+
+
 int		main(int argc, char **argv)
 {
 	int	i;

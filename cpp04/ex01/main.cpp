@@ -8,7 +8,7 @@ int main()
 	{
 		const Animal *j = new Dog();
 		const Animal *i = new Cat();
-		
+
 		delete j; // should not create a leak
 		delete i;
 	}
@@ -38,6 +38,7 @@ int main()
 			delete animals[i];
 		// delete dog;
 		/* check leaks */
-		// while (1) ;
+		while (1) ;
+		system("leaks ex01");
 	}
 }
