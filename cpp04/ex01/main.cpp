@@ -26,7 +26,7 @@ int main()
 		dynamic_cast<Dog*>(animals[0])->printBrainIdea();
 		std::cout << "before : dog ============================" << std::endl;
 		Dog *dog = new Dog();
-		dog = dynamic_cast<Dog*>(animals[0]);
+		*dog = *dynamic_cast<Dog*>(animals[0]);
 		dog->printBrainIdea();
 
 		dog->setBrainIdeas("dog brain idea!");
@@ -36,9 +36,9 @@ int main()
 		dog->printBrainIdea();
 		for (int i = 0; i < N; ++i)
 			delete animals[i];
-		// delete dog;
+		delete dog;
+
 		/* check leaks */
 		while (1) ;
-		system("leaks ex01");
 	}
 }
