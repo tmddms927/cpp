@@ -48,3 +48,13 @@ std::ostream& operator<<(std::ostream &out, const Form &form) {
 		", signed_grade : " << temp.getSignedGrade() << ", execute_grade : " << temp.getExecuteGrade();
 	return out;
 }
+
+//////////// ex02 추가
+bool Form::checkExecute(void) {
+	if (sign)
+		return true;
+	else {
+		std::cout << "not signed!" << std::endl;
+		return false;
+	}
+}

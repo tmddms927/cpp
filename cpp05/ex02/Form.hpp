@@ -32,7 +32,7 @@ public:
 	int getSignedGrade(void);
 	int getExecuteGrade(void);
 	void beSigned(int _grade);
-	bool checkExecute();
+	bool checkExecute(void);
 };
 
 std::ostream& operator<<(std::ostream &out, const Form &form);
