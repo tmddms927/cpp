@@ -8,9 +8,11 @@ int main()
 	{
 		const Animal *j = new Dog();
 		const Animal *i = new Cat();
-		
+
 		delete j; // should not create a leak
 		delete i;
+
+		return 0;
 	}
 	{
 		Animal *animals[N];
@@ -26,12 +28,12 @@ int main()
 		dynamic_cast<Dog*>(animals[0])->printBrainIdea();
 		std::cout << "before : dog ============================" << std::endl;
 		Dog *dog = new Dog();
-		*dog = *dynamic_cast<Dog*>(animals[0]);
+		*dog = *(Dog *)animals[0];
 		dog->printBrainIdea();
 
 		dog->setBrainIdeas("dog brain idea!");
 		std::cout << "after : idea[0] ============================" << std::endl;
-		dynamic_cast<Dog*>(animals[0])->printBrainIdea();
+		((Dog *)(animals[0]))->printBrainIdea();
 		std::cout << "after : dog ============================" << std::endl;
 		dog->printBrainIdea();
 		for (int i = 0; i < N; ++i)
@@ -39,6 +41,6 @@ int main()
 		delete dog;
 
 		/* check leaks */
-		while (1) ;
+		// while (1) ;
 	}
 }
