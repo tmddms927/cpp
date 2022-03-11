@@ -1,6 +1,7 @@
 OUT		=	ex01
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+# -fsanitize=address
 SRCS	=	main.cpp\
 			Animal.cpp\
 			Cat.cpp\
