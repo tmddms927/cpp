@@ -2,6 +2,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 #include "Form.hpp"
+#include <fstream>
 
 #define S_NANE "ShrubberyCreationForm"
 #define S_SIGN 145
@@ -14,8 +15,9 @@ private:
 
 public:
 	~ShrubberyCreationForm();
+	ShrubberyCreationForm(std::string target);
 	ShrubberyCreationForm(const ShrubberyCreationForm& scf);
-	void execute(void);
+	void execute(Bureaucrat const & executor) const;
 };
 
 #endif

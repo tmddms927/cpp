@@ -4,10 +4,11 @@
 #include <iostream>
 #include <exception>
 #include <string>
-#include "Form.hpp"
 
 #define GRADE_MAX 1
 #define GRADE_MIN 100
+
+class Form;
 
 class Bureaucrat {
 private:
@@ -20,8 +21,8 @@ public:
 	~Bureaucrat();
 	Bureaucrat(const Bureaucrat &bureaucrat);
 	Bureaucrat(std::string _name, int _grade);
-	std::string getName(void);
-	int getGrade(void);
+	std::string getName(void) const;
+	int getGrade(void) const;
 	class GradeTooHighException : public std::exception {
 		const char* what() const throw();
 	};
@@ -31,6 +32,8 @@ public:
 	void increamentGrade(void);
 	void decreamentGrade(void);
 	void signForm(Form &form);
+	// ex02 추가
+	void executeForm(Form const & form);
 };
 
 std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat);

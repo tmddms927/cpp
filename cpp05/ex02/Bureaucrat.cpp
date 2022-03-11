@@ -1,4 +1,6 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
 
 Bureaucrat::~Bureaucrat() {
 }
@@ -9,11 +11,11 @@ Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) : name(bureaucrat.name), gr
 Bureaucrat::Bureaucrat(std::string _name, int _grade):name(_name), grade(_grade) {
 }
 
-std::string Bureaucrat::getName(void) {
+std::string Bureaucrat::getName(void) const {
 	return name;
 }
 
-int Bureaucrat::getGrade(void) {
+int Bureaucrat::getGrade(void) const {
 	return grade;
 }
 
@@ -52,4 +54,16 @@ void Bureaucrat::signForm(Form &form) {
 		return ;
 	}
 	std::cout << name << " signs " << form.getName() << std::endl;
+}
+
+
+////////// ex02 추가
+void Bureaucrat::executeForm(Form const & form) {
+	try {
+		form.execute(*this);
+		std::cout << "success execute : <" + form.getName() + "> !" << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 }
