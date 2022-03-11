@@ -34,7 +34,7 @@ public:
 	int getExecuteGrade(void) const;
 	void beSigned(int _grade);
 	// ex02 추가
-	bool checkExecute(Bureaucrat const &b) const;
+	void checkExecute(Bureaucrat const &b) const;
 	virtual void execute(Bureaucrat const & executor) const = 0;
 	class NotSignedException : public std::exception {
 		const char* what() const throw();

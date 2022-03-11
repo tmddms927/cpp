@@ -16,8 +16,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& scf)
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	// sign이 안 되어있을 경우
-	if (!checkExecute(executor))
-		return ;
+	checkExecute(executor);
 	std::string file_name = getName() + "_shrubbery";
 	std::ofstream fout;
 	try {

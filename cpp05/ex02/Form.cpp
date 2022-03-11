@@ -49,12 +49,11 @@ std::ostream& operator<<(std::ostream &out, const Form &form) {
 }
 
 //////////// ex02 추가
-bool Form::checkExecute(Bureaucrat const &b) const {
+void Form::checkExecute(Bureaucrat const &b) const {
 	if (!sign)
 		throw NotSignedException();
 	if (b.getGrade() > execute_grade)
 		throw GradeTooLowException();
-	return true;
 }
 
 const char* Form::NotSignedException::what() const throw() {
