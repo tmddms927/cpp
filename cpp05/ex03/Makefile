@@ -1,4 +1,4 @@
-OUT		=	ex02
+OUT		=	ex03
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror
 SRCS	=	main.cpp\
@@ -6,7 +6,8 @@ SRCS	=	main.cpp\
 			Form.cpp\
 			ShrubberyCreationForm.cpp\
 			RobotomyRequestForm.cpp\
-			PresidentialPardonForm.cpp
+			PresidentialPardonForm.cpp\
+			Intern.cpp
 OBJS	=	${SRCS:.cpp=.o}
 
 all		:	${OUT}
