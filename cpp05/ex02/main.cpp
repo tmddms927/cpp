@@ -16,7 +16,7 @@ int main(void) {
 		test1.executeForm(*s);
 
 		std::cout << std::endl << "=====================================" << std::endl << std::endl;
-		Bureaucrat test2("test2", 200);
+		Bureaucrat test2("test2", 150);
 		std::cout << "before =====================" << std::endl;
 		test2.executeForm(*s);
 
