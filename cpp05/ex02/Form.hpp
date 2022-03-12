@@ -7,7 +7,7 @@
 #include "Bureaucrat.hpp"
 
 #define GRADE_MAX 1
-#define GRADE_MIN 100
+#define GRADE_MIN 150
 
 class Form {
 private:
