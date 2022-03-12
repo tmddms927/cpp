@@ -6,9 +6,6 @@
 #include <string>
 #include "Form.hpp"
 
-#define GRADE_MAX 1
-#define GRADE_MIN 100
-
 class Bureaucrat {
 private:
 	const std::string name;
@@ -20,8 +17,8 @@ public:
 	Bureaucrat(const Bureaucrat &bureaucrat);
 	Bureaucrat& operator=(const Bureaucrat &bureaucrat);
 	Bureaucrat(std::string _name, int _grade);
-	std::string getName(void);
-	int getGrade(void);
+	std::string getName(void) const;
+	int getGrade(void) const;
 	class GradeTooHighException : public std::exception {
 		const char* what() const throw();
 	};

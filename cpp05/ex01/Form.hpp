@@ -6,7 +6,7 @@
 #include <string>
 
 #define GRADE_MAX 1
-#define GRADE_MIN 100
+#define GRADE_MIN 150
 
 class Form {
 private:
@@ -27,10 +27,10 @@ public:
 	class GradeTooLowException : public std::exception {
 		const char* what() const throw();
 	};
-	std::string getName(void);
-	bool getSign(void);
-	int getSignedGrade(void);
-	int getExecuteGrade(void);
+	std::string getName(void) const;
+	bool getSign(void) const;
+	int getSignedGrade(void) const;
+	int getExecuteGrade(void) const;
 	void beSigned(int _grade);
 };
 

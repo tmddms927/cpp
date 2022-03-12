@@ -12,10 +12,7 @@ Form::Form(const Form& form) : name(form.name), sign(false),
 
 Form& Form::operator=(const Form& form) {
 	if (this != &form) {
-		*const_cast<std::string *>(&name) = form.name;
 		sign = form.sign;
-		*const_cast<int *>(&signed_grade) = form.signed_grade;
-		*const_cast<int *>(&execute_grade) = form.execute_grade;
 	}
 	return *this;
 }
@@ -33,19 +30,19 @@ const char* Form::GradeTooLowException::what() const throw() {
 	return "too low exception!";
 }
 
-std::string Form::getName(void) {
+std::string Form::getName(void) const {
 	return name;
 }
 
-bool Form::getSign(void) {
+bool Form::getSign(void) const {
 	return sign;
 }
 
-int Form::getSignedGrade(void) {
+int Form::getSignedGrade(void) const {
 	return signed_grade;
 }
 
-int Form::getExecuteGrade(void) {
+int Form::getExecuteGrade(void) const {
 	return execute_grade;
 }
 
@@ -56,8 +53,7 @@ void Form::beSigned(int _grade) {
 }
 
 std::ostream& operator<<(std::ostream &out, const Form &form) {
-	Form temp = form;
-	out << "name : " << temp.getName() << ", sign : " << temp.getSign() <<
-		", signed_grade : " << temp.getSignedGrade() << ", execute_grade : " << temp.getExecuteGrade();
+	out << "name : " << form.getName() << ", sign : " << form.getSign() <<
+		", signed_grade : " << form.getSignedGrade() << ", execute_grade : " << form.getExecuteGrade();
 	return out;
 }
