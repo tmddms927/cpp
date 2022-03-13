@@ -4,9 +4,10 @@
 #include <iostream>
 #include <exception>
 #include <string>
+#include "Bureaucrat.hpp"
 
 #define GRADE_MAX 1
-#define GRADE_MIN 100
+#define GRADE_MIN 150
 
 class Form {
 private:
@@ -18,7 +19,7 @@ private:
 	Form& operator=(const Form& form);
 
 public:
-	~Form();
+	virtual ~Form();
 	Form(const Form& form);
 	Form(std::string _name, int _signed_grade, int _excute_grade);
 	class GradeTooHighException : public std::exception {
@@ -27,12 +28,17 @@ public:
 	class GradeTooLowException : public std::exception {
 		const char* what() const throw();
 	};
-	std::string getName(void);
-	bool getSign(void);
-	int getSignedGrade(void);
-	int getExecuteGrade(void);
+	std::string getName(void) const;
+	bool getSign(void) const;
+	int getSignedGrade(void) const;
+	int getExecuteGrade(void) const;
 	void beSigned(int _grade);
-	bool checkExecute(void);
+	// ex02 추가
+	void checkExecute(Bureaucrat const &b) const;
+	virtual void execute(Bureaucrat const & executor) const = 0;
+	class NotSignedException : public std::exception {
+		const char* what() const throw();
+	};
 };
 
 std::ostream& operator<<(std::ostream &out, const Form &form);

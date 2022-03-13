@@ -5,6 +5,9 @@
 #include <exception>
 #include <string>
 
+#define GRADE_MAX 1
+#define GRADE_MIN 150
+
 class Form;
 
 class Bureaucrat {

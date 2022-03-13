@@ -28,11 +28,13 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 void Bureaucrat::increamentGrade(void) {
 	if (grade + 1 > GRADE_MIN)
 		throw GradeTooLowException();
+	grade++;
 }
 
 void Bureaucrat::decreamentGrade(void) {
 	if (grade - 1 < GRADE_MAX)
 		throw GradeTooHighException();
+	grade--;
 }
 
 std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat) {

@@ -1,12 +1,13 @@
-OUT		=	ex01
+OUT		=	ex03
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-# -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror
 SRCS	=	main.cpp\
-			Animal.cpp\
-			Cat.cpp\
-			Dog.cpp\
-			Brain.cpp
+			Bureaucrat.cpp\
+			Form.cpp\
+			ShrubberyCreationForm.cpp\
+			RobotomyRequestForm.cpp\
+			PresidentialPardonForm.cpp\
+			Intern.cpp
 OBJS	=	${SRCS:.cpp=.o}
 
 all		:	${OUT}

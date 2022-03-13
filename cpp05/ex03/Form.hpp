@@ -4,9 +4,10 @@
 #include <iostream>
 #include <exception>
 #include <string>
+#include "Bureaucrat.hpp"
 
 #define GRADE_MAX 1
-#define GRADE_MIN 150
+#define GRADE_MIN 100
 
 class Form {
 private:
@@ -32,6 +33,12 @@ public:
 	int getSignedGrade(void) const;
 	int getExecuteGrade(void) const;
 	void beSigned(int _grade);
+	// ex02 추가
+	void checkExecute(Bureaucrat const &b) const;
+	virtual void execute(Bureaucrat const & executor) const = 0;
+	class NotSignedException : public std::exception {
+		const char* what() const throw();
+	};
 };
 
 std::ostream& operator<<(std::ostream &out, const Form &form);
