@@ -12,6 +12,13 @@ Form::Form(std::string _name, int _signed_grade, int _excute_grade)
 	sign = false;
 }
 
+Form& Form::operator=(const Form& form) {
+	if (this != &form) {
+		sign = form.sign;
+	}
+	return *this;
+}
+
 const char* Form::GradeTooHighException::what() const throw() {
 	return "too high exception!";
 }
