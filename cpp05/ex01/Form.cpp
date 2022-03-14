@@ -1,8 +1,5 @@
 #include "Form.hpp"
 
-Form::Form() : signed_grade(0), execute_grade(0) {
-}
-
 Form::~Form() {
 }
 
