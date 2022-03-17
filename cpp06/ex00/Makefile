@@ -1,7 +1,8 @@
 OUT		=	ex00
 CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
-SRCS	=	main.cpp
+CFLAGS	=	-Wall -Wextra -Werror -fsanitize=address
+SRCS	=	main.cpp\
+			Convert.cpp
 OBJS	=	${SRCS:.cpp=.o}
 
 all		:	${OUT}

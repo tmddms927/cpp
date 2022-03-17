@@ -6,5 +6,12 @@ int main(int argc, char **argv) {
 		return 0;
     }
 	Convert convert(argv[1]);
-	convert.inputError();
+	if (!convert.inputError())
+		return 0;
+	convert.printChar();
+	convert.printInt();
+	convert.printFloat();
+	convert.printDouble();
+
+	return 0;
 }

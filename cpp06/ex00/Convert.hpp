@@ -2,18 +2,27 @@
 # define CONVERT_HPP
 
 #include <iostream>
+#include <cstdlib>
+#include <cstdio>
+#include <exception>
+#include <cmath>
 
 class Convert {
 private:
-	std::string _str;
+	const char *_charStr;
+	const std::string _stringStr;
 	double _value;
 	Convert();
 public:
-	Convert(const std::string & str);
+	Convert(const char * str);
 	~Convert();
 	Convert(const Convert & c);
 	Convert & operator=(const Convert & c);
 	bool inputError();
+	void printChar();
+	void printInt();
+	void printFloat();
+	void printDouble();
 };
 
 #endif
