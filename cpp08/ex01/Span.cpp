@@ -74,6 +74,6 @@ unsigned int Span::longestSpan()
 	return _nInts[_n - 1] - _nInts[0];
 }
 
-void randomNum() {
-	
+unsigned int randomNum() {
+	return rand() % 100;
 }

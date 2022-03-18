@@ -1,37 +1,91 @@
 #include "Span.hpp"
 #include <vector>
 
+#define N 10000
+
 int main(void)
 {
-	// {
-	// 	Span sp = Span(5);
-	// 	sp.addNumber(5);
-	// 	sp.addNumber(3);
-	// 	sp.addNumber(17);
-	// 	sp.addNumber(9);
-	// 	sp.addNumber(11);
-	// 	std::cout << sp.shortestSpan() << std::endl;
-	// 	std::cout << sp.longestSpan() << std::endl;
-	// 	return 0;
-	// }
 	{
-		// int a[20] = { 1, 2, 54124 };
 		Span sp = Span(5);
-		std::vector<unsigned int> test(5);
-		test[0] = 1;
-		test[1] = 11;
-		test[2] = 1321;
-		test[3] = 214;
-		test[4] = 14;
+		sp.addNumber(5);
+		sp.addNumber(3);
+		sp.addNumber(17);
+		sp.addNumber(9);
+		sp.addNumber(11);
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+		return 0;
+	}
+
+	{
+		Span sp = Span(N);
+		std::vector<unsigned int> test(N);
+		srand(time(NULL));
+
+		for (int i = 0; i < N; ++i)
+			test[i] = randomNum();
 		try {
-			sp.addNumber(4);
+			sp.addNumber(test.begin(), test.end());
+		}
+		catch (std::exception & e) {
+			std::cout << e.what() << std::endl;
+		}
+
+		try {
+			std::cout << sp.shortestSpan() << std::endl;
+			std::cout << sp.longestSpan() << std::endl;
+		}
+		catch (std::exception & e) {
+			std::cout << e.what() << std::endl;
+		}
+		return 0;
+	}
+
+	{
+		Span sp = Span(N);
+		std::vector<char> test(N);
+		srand(time(NULL));
+
+		for (int i = 0; i < N; ++i)
+			test[i] = randomNum();
+		try {
 			sp.addNumber(std::begin(test), std::end(test));
 		}
 		catch (std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+
+		try {
+			std::cout << sp.shortestSpan() << std::endl;
+			std::cout << sp.longestSpan() << std::endl;
+		}
+		catch (std::exception & e) {
+			std::cout << e.what() << std::endl;
+		}
+		return 0;
+	}
+
+	{
+		Span sp = Span(N);
+		std::list<unsigned int> test;
+		srand(time(NULL));
+
+		for (int i = 0; i < N; ++i)
+			test.push_back(randomNum());
+		try {
+			sp.addNumber(std::begin(test), std::end(test));
+		}
+		catch (std::exception & e) {
+			std::cout << e.what() << std::endl;
+		}
+
+		try {
+			std::cout << sp.shortestSpan() << std::endl;
+			std::cout << sp.longestSpan() << std::endl;
+		}
+		catch (std::exception & e) {
+			std::cout << e.what() << std::endl;
+		}
 		return 0;
 	}
 }

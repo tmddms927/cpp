@@ -4,6 +4,11 @@
 #include <iostream>
 #include <exception>
 #include <algorithm>
+#include <cstdlib>
+#include <ctime>
+#include <list>
+
+#define UNSIGNED_INT_ITER typename T< unsigned int, std::allocator<unsigned int> >::iterator
 
 class Span {
 private:
@@ -17,10 +22,11 @@ public:
 	Span(unsigned int n);
 	Span & operator=(const Span & span);
 	void addNumber(unsigned int number);
-	template < typename T >
-	void addNumber(T begin, T end) {
-		for (T it = begin; it != end; ++it) {
-			if (_now == _n)
+
+	template< typename T >
+	void addNumber(T start, T last) {
+		for (T it = start; it != last; ++it) {
+			if (_now >= _n)
 				throw NIntsError();
 			_nInts[_now++] = *it;
 		}
@@ -33,5 +39,7 @@ public:
 		}
 	};
 };
+
+unsigned int randomNum();
 
 #endif
