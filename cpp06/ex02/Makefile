@@ -1,4 +1,4 @@
-OUT		=	ex01
+OUT		=	ex02
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror -fsanitize=address
 SRCS	=	main.cpp\

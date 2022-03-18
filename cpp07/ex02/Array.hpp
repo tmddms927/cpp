@@ -27,7 +27,7 @@ public:
 		delete [] _a;
 	}
 	Array & operator=(const Array & array) {
-		std::cout << "allocation operator constuctor!" << std::endl;
+		std::cout << "Assignment operator!" << std::endl;
 		if (this != &array) {
 			delete [] _a;
 			_a = new T[array._size];

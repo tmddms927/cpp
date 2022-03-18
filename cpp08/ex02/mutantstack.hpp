@@ -8,10 +8,23 @@ template <typename T>
 class MutantStack : public std::stack<T> {
 public:
 	typedef typename std::stack<T>::container_type::iterator iterator;
-	MutantStack() {}
-	~MutantStack() {}
-	MutantStack(const MutantStack & m);
-	MutantStack & operator=(const MutantStack & m);
+	MutantStack() {
+		std::cout << "Default Constructor!" << std::endl;
+	}
+	~MutantStack() {
+		std::cout << "Default Destructor!" << std::endl;
+	}
+	MutantStack(const MutantStack & m){
+		std::cout << "(const MutantStack) Constructor!" << std::endl;
+		*this = m;
+	}
+	MutantStack & operator=(const MutantStack & m) {
+		std::cout << "Assignment operator!" << std::endl;
+		if (this != &m) {
+			this->c = m.c;
+		}
+		return *this;
+	}
 	iterator begin() {
 		return this->c.begin();
 	}

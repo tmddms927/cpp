@@ -3,6 +3,15 @@
 
 int main(void)
 {
+	// {
+	// 	MutantStack<int> mstack;
+	// 	mstack.push(5);
+	// 	mstack.push(5);
+	// 	mstack.push(5);
+	// 	MutantStack<int> t1 = mstack;
+	// 	std::cout << t1.top() << ", " << t1.size() << std::endl;
+	// }
+
 	{
 		MutantStack<int> mstack;
 		mstack.push(5);

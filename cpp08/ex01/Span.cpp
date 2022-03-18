@@ -29,7 +29,7 @@ Span::Span(unsigned int n) : _n(n)
 
 Span & Span::operator=(const Span &span)
 {
-	std::cout << "Allocation Operator!" << std::endl;
+	std::cout << "Assignment Operator!" << std::endl;
 	if (this != &span)
 	{
 		delete[] _nInts;
