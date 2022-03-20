@@ -4,10 +4,6 @@
 #include "Base.hpp"
 
 class C : public Base {
-public:
-	C();
-	~C();
-	void printType();
 };
 
 #endif

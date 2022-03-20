@@ -6,7 +6,6 @@
 class Base {
 public:
 	virtual ~Base();
-	virtual void printType() = 0;
 };
 
 #endif
