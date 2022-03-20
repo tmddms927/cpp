@@ -19,6 +19,7 @@ public:
 		_a = new T[n];
 	}
 	Array(const Array & array) {
+		_a = new T[0];
 		std::cout << "copy constuctor!" << std::endl;
 		*this = array;
 	}
@@ -37,7 +38,12 @@ public:
 		}
 		return *this;
 	}
-	T operator[](int i) {
+	T & operator[](const int i) {
+		if (i < 0 || i >= _size)
+			throw OutOfArray();
+		return _a[i];
+	}
+	const T & operator[](const int i) const {
 		if (i < 0 || i >= _size)
 			throw OutOfArray();
 		return _a[i];
