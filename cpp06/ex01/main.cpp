@@ -8,6 +8,6 @@ int main(void) {
 	uintptr_t data_int = serialize(data);
 	Data *data_ptr = deserialize(data_int);
 
-	std::cout << "original ptr : " << data_ptr << std::endl;
+	std::cout << "after ptr : " << data_ptr << std::endl;
 	std::cout << data_ptr->hi << std::endl;
 }
