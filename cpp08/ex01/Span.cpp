@@ -10,6 +10,7 @@ Span::Span()
 
 Span::Span(const Span &span)
 {
+	_nInts = new unsigned int[0];
 	std::cout << "Copy Constructor!" << std::endl;
 	*this = span;
 }
