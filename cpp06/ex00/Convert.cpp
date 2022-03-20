@@ -48,7 +48,7 @@ bool Convert::inputError() {
 void Convert::printChar() {
 	if (_stringStr.compare("nan") == 0 || _stringStr.compare("nanf") == 0)
 		std::cout << "char : impossible" << std::endl;
-	else if (_value < 0 || _value > 128)
+	else if (_value < 0 || _value > 127)
 		std::cout << "char : impossible" << std::endl;
 	else if (_value < 32)
 		std::cout << "char : Non Displayable" << std::endl;
