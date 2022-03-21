@@ -8,8 +8,6 @@
 #include <ctime>
 #include <list>
 
-#define UNSIGNED_INT_ITER typename T< unsigned int, std::allocator<unsigned int> >::iterator
-
 class Span {
 private:
 	int *_nInts;
