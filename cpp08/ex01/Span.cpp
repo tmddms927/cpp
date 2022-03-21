@@ -3,14 +3,14 @@
 Span::Span()
 {
 	std::cout << "Default Constructor!" << std::endl;
-	_nInts = new unsigned int[0];
+	_nInts = new int[0];
 	_n = 0;
 	_now = 0;
 }
 
 Span::Span(const Span &span)
 {
-	_nInts = new unsigned int[0];
+	_nInts = new int[0];
 	std::cout << "Copy Constructor!" << std::endl;
 	*this = span;
 }
@@ -24,7 +24,7 @@ Span::~Span()
 Span::Span(unsigned int n) : _n(n)
 {
 	std::cout << "(unsigned int) Constructor!" << std::endl;
-	_nInts = new unsigned int[n];
+	_nInts = new int[n];
 	_now = 0;
 }
 
@@ -34,7 +34,7 @@ Span & Span::operator=(const Span &span)
 	if (this != &span)
 	{
 		delete[] _nInts;
-		_nInts = new unsigned int[span._n];
+		_nInts = new int[span._n];
 		_n = span._n;
 		_now = span._now;
 		for (unsigned int i = 0; i < (unsigned int)span._n; ++i)

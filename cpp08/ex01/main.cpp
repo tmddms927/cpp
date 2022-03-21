@@ -12,11 +12,12 @@ int main(void)
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
+		// sp.addNumber(INT_MAX);
+		// sp.addNumber(INT_MIN);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 		return 0;
 	}
-
 	{
 		Span sp = Span(N);
 		std::vector<unsigned int> test(N);

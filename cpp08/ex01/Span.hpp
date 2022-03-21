@@ -12,7 +12,7 @@
 
 class Span {
 private:
-	unsigned int *_nInts;
+	int *_nInts;
 	unsigned int _n;
 	unsigned int _now;
 public:
